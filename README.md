@@ -16,7 +16,7 @@ Do note that free API subscription plans are subject to requests throttling.
 
 ### Example
 
-With a free OWM API Key:
+With a free NowDawn API Key:
 
 ```python
 import nowdawn as NowDawn
