@@ -1,6 +1,10 @@
 # pyNowDawn
 
-Open Source Python library for interfacing with the NowDawn API
+![Windows Build Status](https://github.com/Now-Dawn/pyNowDawn/workflows/Windows/badge.svg)
+![Linux Build Status](https://github.com/Now-Dawn/pyNowDawn/workflows/Linux/badge.svg)
+![MIT License](https://img.shields.io/github/license/Now-dawn/pyNowDawn)
+
+## Open Source Python library for interfacing with the NowDawn API
 
 ## What is it?
 
@@ -19,13 +23,13 @@ Do note that free API subscription plans are subject to requests throttling.
 With a free NowDawn API Key:
 
 ```python
-import nowdawn as NowDawn
+import nowdawn as NowDawn, weatherBy, weather_at
 
 NowDawn('your-API-key')  # You MUST provide a valid API key
 
-# Search for current weather in London (Great Britain)
-current_weather = NowDawn.weather_at(city='London', country='GB').current()
-print(current_weather)  # <Weather - reference time=2013-12-18 09:20, status=Clouds>
+# Search for current weather in San Francisco (United States)
+current_weather = weatherBy.city(city='San Francisco', country='US').current()
+print(current_weather)
 
 # Weather details
 current_weather.temperature  # 9
@@ -34,8 +38,9 @@ current_weather.wind_speed   # 4
 
 print(current_weather.__readings__)
 
-# Get the current weather observations at lat=22.57W, lon=43.12S (Rio de Janeiro, BR)
-observation = NowDawn.weather_at(lat=-22.57, lon=-43.12, metric_units=True)
+# Get the current weather at lat=43.65N, lon=79.38W (Toronto, Canada)
+observation = weatherBy.latLon(lat=43.65, lon=-79.38,
+                               metric_units=False).forecast(plus_hour=1)
 print(observation)
 ```
 
@@ -50,7 +55,3 @@ $ pip install pyNowDawn
 ## Documentation
 
 The library software API documentation is available on [Read the Docs](https://pynowdawn.readthedocs.io/en/latest/).
-
-
-## License
-[MIT license](https://github.com/Now-dawn/pyNowDawn/blob/master/LICENSE)
