@@ -5,19 +5,19 @@
 class Reading:
     """"""
     
-    def __init__(self, value=0, unit="mm"):
+    def __init__(self, unit, value=None):
         """"""
         self.value = value
         self.unit = unit
 
-    def unit():
+    def unit(self):
         """"""
         return self.unit
 
-    def __str__():
+    def __str__(self):
         """"""
         return self.value
 
-    def __repr__():
+    def __repr__(self):
         """"""
-        return str('{value=' + str(self.value) + ', unit=' + str(self.unit) + '}'
+        return str('{value=' + str(self.value) + ', unit=' + str(self.unit) + '}')
