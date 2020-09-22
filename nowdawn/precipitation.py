@@ -33,4 +33,6 @@ class Precipitation:
 
     def __repr__(self):
         """"""
-        return str('{intensity=' + str(self.intensity) + ', precip_type=' + str(self.precip_type) + ', probability=' + str(probability) + ', precip_unit=' + str(self.unit) + '}')
+        return str('{intensity=' + str(self.intensity) + ', precip_type=' + \
+            str(self.precip_type) + ', probability=' + str(self.probability) + \
+            ', precip_unit=' + str(self.unit) + '}')

@@ -22,7 +22,7 @@ class NowDawn:
         url = "https://api.nowdawn.com/" # TODO
         response = get(url)
         # TODO error catching - eg. network
-        return Observation() # TODO load parameters
+        return Observation(latitude=lat, longitude=lon) # TODO load parameters
 
     def city(self, city, country, metric_units=True):
         """"""
@@ -37,4 +37,3 @@ class NowDawn:
         response = get(url)
         # TODO error catching - eg. network
         return Observation() # TODO load parameters
-
