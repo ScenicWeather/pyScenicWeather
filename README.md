@@ -1,21 +1,21 @@
-# pyNowDawn
+# pyScenicWeather
 
-![Windows Build Status](https://github.com/Now-Dawn/pyNowDawn/workflows/Windows/badge.svg)
-![Linux Build Status](https://github.com/Now-Dawn/pyNowDawn/workflows/Linux/badge.svg)
-![MIT License](https://img.shields.io/github/license/Now-dawn/pyNowDawn)
+![Windows Build Status](https://github.com/ScenicWeather/pyScenicWeather/workflows/Windows/badge.svg)
+![Linux Build Status](https://github.com/ScenicWeather/pyScenicWeather/workflows/Linux/badge.svg)
+![MIT License](https://img.shields.io/github/license/ScenicWeather/pyScenicWeather)
 
-## Open Source Python library for interfacing with the NowDawn API
+## Open Source Python library for interfacing with the Scenic API
 
 ## What is it?
 
-PyNowDawn is a client Python wrapper library for NowDawn web APIs. It allows quick and easy consumption of NowDawn data by Python applications.
+PyScenicWeather is a client Python wrapper library for Scenic REST APIs. It allows quick and easy consumption of NowDawn data by Python applications.
 
 ## Get started
 
 ### API key
 
-As NowDawns APIs need a valid API key to allow responses, *PyNowDawn will not work without one*.
-You can get a free API key [on the NowDawn website](https://nowdawn.com/sign_up)
+As Scenic Weather APIs require a valid API key to allow responses, *pyScenicWeather will not work without one*.
+You can get a free API key [on the Scenic website](https://scenicdata.com/register)
 Do note that free API subscription plans are subject to requests throttling.
 
 ### Example
@@ -23,12 +23,12 @@ Do note that free API subscription plans are subject to requests throttling.
 With a free NowDawn API Key:
 
 ```python
-from nowdawn import NowDawn as weatherBy
+from scenic import Scenic as weatherBy
 
 NowDawn('your-API-key')  # You MUST provide a valid API key
 
 # Search for current weather in San Francisco (United States)
-current_weather = weatherBy.city(city='San Francisco', country='US')  # Defaults to current weather measurement
+current_weather = weatherBy.city(city='Toronto', country='CA')  # Defaults to current weather measurement
 print(current_weather)
 
 # Weather details
@@ -50,9 +50,9 @@ print(observation)
 Install with `pip` for your ease:
 
 ```shell
-$ pip install pyNowDawn
+$ pip install pyScenicWeather
 ```
 
 ## Documentation
 
-The library software API documentation is available on [Read the Docs](https://pynowdawn.readthedocs.io/en/latest/).
+The library software API documentation is available on [Read the Docs](https://api.scenicdata.com/docs).
