@@ -16,7 +16,7 @@ setup(
     consumption of Scenic weather data from Python applications via a simple object model and in a human-friendly fashion.""",
     include_package_data=True,
     install_requires=[
-        'requests==2.24.0'
+        'requests==2.26.0'
     ],
     python_requires='>=3.7',
     classifiers=[
