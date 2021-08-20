@@ -4,7 +4,7 @@
 
 class Wind:
     """"""
-    
+
     def __init__(self, speed=None, unit="km/h", gust=None, direction=None):
         """"""
         self.speed = speed

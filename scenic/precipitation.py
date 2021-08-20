@@ -4,7 +4,7 @@
 
 class Precipitation:
     """"""
-    
+
     def __init__(self, intensity=None, unit="C", precip_type=None, probability=0.0):
         """"""
         self.intensity = intensity
@@ -33,6 +33,7 @@ class Precipitation:
 
     def __repr__(self):
         """"""
-        return str('{intensity=' + str(self.intensity) + ', precip_type=' + \
-            str(self.precip_type) + ', probability=' + str(self.probability) + \
-            ', precip_unit=' + str(self.unit) + '}')
+        return (f"{{intensity='{self.intensity}', "
+                f"precip_type='{self.precip_type}', "
+                f"probability='{self.probability}', "
+                f"precip_unit='{self.unit}'}}")

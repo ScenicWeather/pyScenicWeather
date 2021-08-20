@@ -4,7 +4,6 @@
 
 class Temperature:
     """"""
-    
     def __init__(self, temperature=None, unit="C", feels_like=None):
         """"""
         self.value = temperature
@@ -28,4 +27,4 @@ class Temperature:
 
     def __repr__(self):
         """"""
-        return str('{value=' + str(self.value) + ', feels=' + str(self.feels) + ', unit=' + str(self.unit) + '}')
+        return f"{{value='{self.value}', feels='{self.feels}', unit='{self.unit}'}}"

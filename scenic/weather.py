@@ -20,4 +20,4 @@ class Weather:
 
     def __repr__(self):
         """"""
-        return str('{value=' + str(self.value) + ', unit=' + str(self.unit) + '}'
+        return f"{{value='{self.value}', unit='{self.unit}'}}"
