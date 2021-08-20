@@ -6,7 +6,6 @@ try:
     from pyScenicWeather import Scenic
 except ModuleNotFoundError as exception:
     print(exception)
-    return
 
 def main():
     """"""

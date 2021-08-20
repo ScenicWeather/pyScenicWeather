@@ -91,7 +91,7 @@ class Scenic:
         headers = {'api_key': self.api_key}
 
         try:
-            response = get(url)
+            response = get(url, headers=headers)
         except Exception:
             # TODO more tailored error catching - eg. network
             print(format_exc())
