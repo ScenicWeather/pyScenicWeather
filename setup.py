@@ -1,23 +1,19 @@
 #!/usr/bin/env python
 
 from setuptools import setup, find_packages
-from scenic.__version__ import __author__, __author_email__, __description__, __license__, __title__,\
-    __url__, __version__
 
 setup(
-    name=__title__,
-    version=__version__,
-    description=__description__,
-    author=__author__,
-    author_email=__author_email__,
-    url=__url__,
+    name="pyScenicWeather",
+    version="0.0.3",
+    description="A Python wrapper around Scenic REST APIs",
+    author='Conor Forde',
+    author_email='conor@scenicdata.com',
+    url="https://github.com/ScenicWeather/pyScenicWeather",
     packages=find_packages(),
     long_description="""PyScenicWeather is a client Python wrapper library for Scenic REST APIs. It allows quick and easy 
     consumption of Scenic weather data from Python applications via a simple object model and in a human-friendly fashion.""",
     include_package_data=True,
-    install_requires=[
-        'requests==2.26.0'
-    ],
+    install_requires=['requests==2.26.0'],
     python_requires='>=3.7',
     classifiers=[
       "License :: OSI Approved :: MIT License",
@@ -32,5 +28,5 @@ setup(
         '': ['*.bz2', '*.md', '*.txt', '*.json']
     },
     keywords='scenic weather rest api climate forecast client pollution air-quality darksky',
-    license=__license__
+    license='MIT'
 )
