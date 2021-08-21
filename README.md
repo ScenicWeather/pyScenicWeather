@@ -23,26 +23,28 @@ Do note that free API subscription plans are subject to requests throttling.
 With a free NowDawn API Key:
 
 ```python
-from scenic import Scenic as weatherBy
+from scenic import Scenic
 
-NowDawn('your-API-key')  # You MUST provide a valid API key
+current_weather = None
+with Scenic('your-API-key') as weatherBy: # You MUST provide a valid API key
+    # Search for current weather in Toronto (Canada)
+    # Defaults to current weather measurement
+    current_weather = weatherBy.city(city='Toronto', country='CA')  
 
-# Search for current weather in San Francisco (United States)
-current_weather = weatherBy.city(city='Toronto', country='CA')  # Defaults to current weather measurement
-print(current_weather)
+    if current_weather is not None:
+        print(current_weather)
 
-# Weather details
-current_weather.temperature     # 9
-current_weather.humidity        # 87
-current_weather.wind            # 4
-current_weather.wind.direction  # 180
+        # Weather details
+        print(f"Temperature: {current_weather.temperature}")
+        print(f"Humidity: {current_weather.humidity}")
+        print(f"Wind Speed: {current_weather.wind.speed}")
+        print(f"Wind Direction: {current_weather.wind.direction}")
 
-print(current_weather.__readings__)
+        print(current_weather.__readings__)
 
-# Get the current weather at lat=43.65N, lon=79.38W (Toronto, Canada)
-observation = weatherBy.lat_lon(lat=43.65, lon=-79.38,
-                               metric_units=False).forecast(plus_hour=1)
-print(observation)
+        # Get the current weather at lat=43.65N, lon=79.38W (Toronto, Canada)
+        observation = weatherBy.lat_lon(latitude=43.65, longitude=-79.38, metric_units=False).forecast(plus_hour=1)
+        print(observation)
 ```
 
 For a demo, please see our [quickstart](https://github.com/ScenicWeather/pyScenicWeather/blob/master/example/example.py).

@@ -10,21 +10,21 @@ from reading import Reading
 class Observation:
     """"""
     def __init__(self, latitude=None, longitude=None, altitude=None, temperature=None,
-                 precipitation=None, humidity=None, wind=None):
+                 precipitation=None, humidity=None, wind=None, downloaded_unix=None):
         """"""
         if None in (latitude, longitude):
             raise ValueError('Invalid empty location values')
 
-        self.latitude = latitude # TODO input validation
-        self.longitude = longitude # TODO input validation
+        self.latitude = latitude  # TODO input validation
+        self.longitude = longitude  # TODO input validation
         self.altitude = altitude
 
         if temperature is None:
             self.temperature = Temperature()
         if isinstance(temperature, Temperature):
-            self.temperature = temperature # Feels like, unit
+            self.temperature = temperature  # Feels like, unit
         else:
-            self.temperature = Temperature(temperature) # Feels like, unit
+            self.temperature = Temperature(temperature)  # Feels like, unit
         self.humidity = None
         self.summary = None
         self.icon = None
@@ -49,6 +49,7 @@ class Observation:
         self.is_daytime = None
         self.alerts = []
         self.unix = None
+        self.downloaded_unix=None
 
     def forecast(self, plus_hour=None):
         # TODO Implement

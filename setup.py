@@ -10,20 +10,19 @@ setup(
     author_email='conor@scenicdata.com',
     url="https://github.com/ScenicWeather/pyScenicWeather",
     packages=find_packages(),
-    long_description="""PyScenicWeather is a client Python wrapper library for Scenic REST APIs. It allows quick and easy 
-    consumption of Scenic weather data from Python applications via a simple object model and in a human-friendly fashion.""",
+    long_description="""PyScenicWeather is a client Python wrapper library for Scenic REST APIs. It allows quick and easy
+     consumption of Scenic weather data from Python applications via a simple object model and in a human-friendly fashion.""",
     include_package_data=True,
-    install_requires=['requests==2.26.0'],
+    install_requires=['urllib3==1.26.6'],
     python_requires='>=3.7',
-    classifiers=[
-      "License :: OSI Approved :: MIT License",
-      "Programming Language :: Python",
-      "Programming Language :: Python :: 3.7",
-      "Programming Language :: Python :: 3.8",
-      "Natural Language :: English",
-      "Operating System :: OS Independent",
-      "Intended Audience :: Developers",
-      "Topic :: Software Development :: Libraries"],
+    classifiers=["License :: OSI Approved :: MIT License",
+                 "Programming Language :: Python",
+                 "Programming Language :: Python :: 3.7",
+                 "Programming Language :: Python :: 3.8",
+                 "Natural Language :: English",
+                 "Operating System :: OS Independent",
+                 "Intended Audience :: Developers",
+                 "Topic :: Software Development :: Libraries"],
     package_data={
         '': ['*.bz2', '*.md', '*.txt', '*.json']
     },

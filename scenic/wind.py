@@ -33,6 +33,5 @@ class Wind:
 
     def __repr__(self):
         """"""
-        return str('{wind_speed=' + str(self.speed) + ', wind_gust=' + \
-            str(self.gust) + ', wind_direction=' + str(self.direction) + \
-            ', wind_unit=' + str(self.unit) + '}')
+        return (f"{{wind_speed='{self.speed}', wind_gust='{self.gust}', "
+                f"wind_direction='{self.direction}', wind_unit='{self.unit}'}}")
