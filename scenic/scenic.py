@@ -38,7 +38,7 @@ class Scenic:
         try:
             return self
         except ValueError as ex:
-            self.__exit__(e)
+            self.__exit__(ex)
             return
 
     def __exit__(self, type, value, traceback):
@@ -59,7 +59,7 @@ class Scenic:
         url = f"{BASE_URL}/weather/{latitude}/{longitude}"
         try:
             http = urllib3.PoolManager()
-            response = http.request("GET", url)
+            response = http.request("GET", url, headers)
         except Exception:
             print(format_exc())
             return None
