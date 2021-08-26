@@ -1,16 +1,14 @@
 # pyScenicWeather
 
+> Open Source client wrapper in Python for interfacing with the Scenic Weather data REST API
+
 ![Windows Build Status](https://github.com/ScenicWeather/pyScenicWeather/workflows/Windows/badge.svg)
 ![Linux Build Status](https://github.com/ScenicWeather/pyScenicWeather/workflows/Linux/badge.svg)
 ![MIT License](https://img.shields.io/github/license/ScenicWeather/pyScenicWeather)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/ScenicWeather/pyScenicWeather.svg)](http://isitmaintained.com/project/ScenicWeather/pyScenicWeather "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/ScenicWeather/pyScenicWeather.svg)](http://isitmaintained.com/project/Snowda/LaughingMan "Percentage of issues still open")
 
-## Open Source Python library for interfacing with the Scenic API
-
-## What is it?
-
-PyScenicWeather is a client wrapper Python library for interacting with the Scenic REST API and enables easy access to Scenic Weather data by Python applications.
-
-## Get started
+## Getting started
 
 ### API key
 
@@ -20,7 +18,7 @@ Do note that free API subscription plans are subject to requests throttling.
 
 ### Example
 
-With a free NowDawn API Key:
+With a free Scenic Weather API Key:
 
 ```python
 from scenic import Scenic
