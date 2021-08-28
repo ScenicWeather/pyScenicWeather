@@ -2,21 +2,36 @@
 
 > Open Source client wrapper in Python for interfacing with the Scenic Weather data REST API
 
+![PyPi version: 0.0.2](https://img.shields.io/badge/?label=pypi&message=v0.0.2&color=blue)
+![Python Versions: 3.7|3.8|3.9](https://img.shields.io/badge/?label=python&message=3.7|3.8|3.9&color=blue)
 ![Windows Build Status](https://github.com/ScenicWeather/pyScenicWeather/workflows/Windows/badge.svg)
 ![Linux Build Status](https://github.com/ScenicWeather/pyScenicWeather/workflows/Linux/badge.svg)
 ![MIT License](https://img.shields.io/github/license/ScenicWeather/pyScenicWeather)
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/ScenicWeather/pyScenicWeather.svg)](http://isitmaintained.com/project/ScenicWeather/pyScenicWeather "Average time to resolve an issue")
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/ScenicWeather/pyScenicWeather.svg)](http://isitmaintained.com/project/Snowda/LaughingMan "Percentage of issues still open")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/ScenicWeather/pyScenicWeather.svg)](http://isitmaintained.com/project/ScenicWeather/pyScenicWeather "Percentage of issues still open")
 
 ## Getting started
 
-### API key
+##  Installation
 
-As Scenic Weather APIs require a valid API key to allow responses, *pyScenicWeather will not work without one*.
-You can get a free API key [on the Scenic website](https://scenicdata.com/register)
-Do note that free API subscription plans are subject to requests throttling.
+Python 3.7 or higher is required.
 
-### Example
+[pyScenicWeather is available on Pypi](https://pypi.org/project/pyScenicWeather/) and can be installed with `pip`:
+
+```shell
+# Linux
+
+pip install pyScenicWeather
+
+```
+
+```shell
+# Windows
+
+$ pip install pyScenicWeather
+```
+
+### Quick Example
 
 With a free Scenic Weather API Key:
 
@@ -45,15 +60,13 @@ with Scenic('your-API-key') as weatherBy: # You MUST provide a valid API key
         print(observation)
 ```
 
-For a demo, please see our [quickstart](https://github.com/ScenicWeather/pyScenicWeather/blob/master/example/example.py).
+You can find more examples in our [examples](https://github.com/ScenicWeather/pyScenicWeather/blob/master/example) directory.
 
-##  Installation
+### API key
 
-pyScenicWeather is available on Pypi and can be installed with `pip`:
-
-```shell
-$ pip install pyScenicWeather
-```
+As Scenic Weather APIs require a valid API key to allow responses, *pyScenicWeather will not work without one*.
+You can get a free API key [on the Scenic website](https://scenicdata.com/register)
+Do note that free API subscription plans are subject to requests throttling.
 
 ## Documentation
 
