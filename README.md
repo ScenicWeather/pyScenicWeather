@@ -2,8 +2,8 @@
 
 > Open Source client wrapper in Python for interfacing with the Scenic Weather data REST API
 
-![PyPi version: 0.0.2](https://img.shields.io/badge/?label=pypi&message=v0.0.2&color=blue)
-![Python Versions: 3.7|3.8|3.9](https://img.shields.io/badge/?label=python&message=3.7|3.8|3.9&color=blue)
+![PyPi version: 0.0.2](https://img.shields.io/badge/pypi-v0.0.2-blue)
+![Python Versions: 3.7|3.8|3.9](https://img.shields.io/badge/python-3.7%7C3.8%7C3.9-blue)
 ![Windows Build Status](https://github.com/ScenicWeather/pyScenicWeather/workflows/Windows/badge.svg)
 ![Linux Build Status](https://github.com/ScenicWeather/pyScenicWeather/workflows/Linux/badge.svg)
 ![MIT License](https://img.shields.io/github/license/ScenicWeather/pyScenicWeather)
