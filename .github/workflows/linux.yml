@@ -30,3 +30,8 @@ jobs:
         flake8 . --count --ignore=E302,E305 --select=E9,E116,E117,E202,E203,E222,E231,E241,E703,E711,E713,F7,F63,F82,F401,F811,F841,W191,W292,W391 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --ignore=E302,E305 --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    - name: Publish to coveralls.io
+      uses: coverallsapp/github-action@v1.1.2
+      with:
+        github-token: ${{ github.coveralls }}
+
