@@ -1,0 +1,10 @@
+[run]
+include = scenic/*
+
+omit =
+    scenic\local_test.py
+    scenic\__init__.py
+data_file = .coverage/.coverage
+
+[html]
+directory = .coverage/html
