@@ -7,26 +7,25 @@ on:
 
 jobs:
   test:
-    strategy:
-      matrix:
-        test-name:
-          - covertest
     runs-on: ubuntu-latest
     steps:
       - name: Publish to coveralls.io
         uses: actions/checkout@v2
       - name: Upload coverage data to coveralls.io
-        run: coveralls --service=github
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COVERALLS_PARALLEL: true
+      run: |
+        python -m pip install --upgrade pip
+        pip install coveralls
+        coveralls --service=github
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        COVERALLS_PARALLEL: true
   coveralls:
     name: Indicate completion to coveralls.io
     needs: test
     runs-on: ubuntu-latest
     container: python:3-slim
     steps:
-    - name: Finished
+    - name: Finish
       run: |
         pip3 install --upgrade coveralls
         coveralls --service=github --finish
