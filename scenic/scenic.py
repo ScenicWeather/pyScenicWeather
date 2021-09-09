@@ -7,8 +7,8 @@ from traceback import format_exc  # TODO remove once fully stable
 from asyncio import run
 from json import loads
 import urllib3
-from observation import Observation
-from scenic_types import Wind, Precipitation, Temperature, Humidity
+from .observation import Observation
+from .scenic_types import Wind, Precipitation, Temperature, Humidity
 
 BASE_URL = "http://api.scenicdata.com/"
 
@@ -34,6 +34,7 @@ class Scenic:
             exception = ValueError(error_message)
             self.__exit__(ValueError, error_message, exception)
         self.api_key = api_key
+        self.cached_data = [] # TODO populate
 
     def __enter__(self):
         try:
@@ -44,6 +45,14 @@ class Scenic:
     def __exit__(self, type, value, traceback):
         if value is not None:
             print(f"Error: {str(value)}")
+
+    def __str__(self):
+        # TODO add cached weather data metrics
+        return f"Current Scenic Weather API key: {self.api_key}"
+
+    def __repr__(self):
+        # TODO add cached data
+        return f"{{{self.api_key}}}"
 
     def lat_lon(self, latitude=None, longitude=None, metric_units=True):
         """"""
@@ -57,8 +66,11 @@ class Scenic:
                    "api_key": self.api_key}
 
         url = f"{BASE_URL}/weather/{latitude}/{longitude}"
+        print(url)
         try:
             http = urllib3.PoolManager()
+            #response_test = http.request("GET", f"{BASE_URL}/ping")
+            #print(response_test.data)
             response = http.request("GET", url, headers)
         except Exception:
             print(format_exc())
@@ -67,7 +79,9 @@ class Scenic:
 
         if response.status == 401:
             json_data = loads(response.data)
-            raise PermissionError(f"Error: {json_data['error']}")
+            raise PermissionError(f"Permission Error: {json_data['error']}")
+
+        # TODO handle 429 rate limit error
 
         if response.status == 200:
             json_data = loads(response.data)
@@ -182,7 +196,8 @@ class Scenic:
         try:
             return Observation()  # TODO load parameters
         except ValueError as ex:
-            raise ex
+            print(ex)
+            return None
 
     def station(self, station_id, metric_units=True):
         """"""

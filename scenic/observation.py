@@ -2,8 +2,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from scenic_types import Wind, Precipitation, Temperature, Humidity
-from reading import Reading
+from .scenic_types import Wind, Precipitation, Temperature, Humidity
+from .reading import Reading
 
 class Observation:
     """"""
@@ -66,11 +66,12 @@ class Observation:
         self.downloaded_unix=downloaded_unix  # TODO handle None
 
     def forecast(self, plus_hour=None):
-        # TODO Implement
-        raise NotImplementedError("Forecasting not yet implemented")
+        # TODO Forecasting not yet implemented
+        return []
 
     def history(self, date_time):
-        raise NotImplementedError("Historical data not yet implemented")
+        # TODO Historical data not yet implemented
+        return []
 
     def __str__(self):
         """"""
