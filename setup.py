@@ -13,7 +13,7 @@ setup(
     long_description="""PyScenicWeather is a client Python wrapper library for Scenic REST APIs. It allows quick and easy
      consumption of Scenic weather data from Python applications via a simple object model and in a human-friendly fashion.""",
     include_package_data=True,
-    install_requires=['urllib3==1.26.11'],
+    install_requires=['urllib3==1.26.12'],
     python_requires='>=3.7',
     classifiers=["License :: OSI Approved :: MIT License",
                  "Programming Language :: Python",
